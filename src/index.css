@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+/* --------------------------------------------------------------- */
+/* ---------------------------- Reset ---------------------------- */
+/* --------------------------------------------------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul {
+    margin: 0;
+}
+
+/* set up the body */
+body {
+    line-height: 1.5;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+
+    width: 100%;
+    overflow-x:hidden;
+
+    background: rgb(148, 148, 148);
+    background-image: url("./assets/background/gradient-linear.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    overflow: hidden;
+}
+
+/* make images easier to work with */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p{
+    font-weight: 400;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* --------------------------------------------------------------- */
+/* ---------------------- Custom Properties ---------------------- */
+/* --------------------------------------------------------------- */
+
+:root{
+    /* ------- Colors ------ */
+        --offWhite:255, 255, 255, 0.5;
+        --accent: 197, 152, 255, 1;
+        --white: 255, 255, 255, 1;
+    
+    /* ----- Font Size ---- */
+        --fs-600: clamp(2rem, 3vw , 2.5rem);
+        --fs-500: clamp(0.9rem, 1vw , 1.2rem);
+        --fs-400: clamp(0.8rem, 1vw , 1rem);
+}
+
+/* --------------------------------------------------------------- */
+/* ------------------------ Custom Class ------------------------- */
+/* --------------------------------------------------------------- */
+
+.fs-600{ 
+    font-size: var(--fs-600);
+    font-weight: 700;
+}
+.fs-500{ font-size: var(--fs-500) }
+.fs-400{ font-size: var(--fs-400) }
+
+.fc-offWhite{ color: rgba( var(--offWhite) ) }
+.fc-accent{ color: rgba( var(--accent) ) }
+.fc-white{ color: rgba( var(--white) )}
+
+.box-container{
+    border: 1px solid #88BEEF;
+    margin-top: 10vh;
+    height: 80vh;
+    width: clamp(30rem, 35vw , 40rem);
+    border-radius: 25px;
+    margin-inline: auto;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0276) 0%, rgba(0, 0, 0, 0.06) 0%, rgba(255, 255, 255, 0.06) 0%, rgba(135, 141, 177, 0.0297472) 51.48%, rgba(90, 98, 138, 0.06) 100%);
+    box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
