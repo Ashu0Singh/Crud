@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/crud/static/css/main.dc131232.css",
+    "main.js": "/crud/static/js/main.27cd8797.js",
+    "static/media/mobile-backgroundImage.png": "/crud/static/media/mobile-backgroundImage.a6908e3a2c5bba678d1c.png",
+    "index.html": "/crud/index.html",
+    "main.dc131232.css.map": "/crud/static/css/main.dc131232.css.map",
+    "main.27cd8797.js.map": "/crud/static/js/main.27cd8797.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dc131232.css",
+    "static/js/main.27cd8797.js"
+  ]
+}
