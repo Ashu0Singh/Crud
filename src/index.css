@@ -29,14 +29,15 @@ ul {
 /* set up the body */
 body {
     line-height: 1.5;
-    min-height: 100vh;
+    min-height: 150vh;
     font-family: 'Poppins', sans-serif;
 
     width: 100%;
     overflow-x:hidden;
 
+    background-position: center;
     background: rgb(148, 148, 148);
-    background-image: url("./assets/background/gradient-linear.png");
+    background-image: url("./assets/background/mobile-backgroundImage.png");
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -93,13 +94,14 @@ body {
 :root{
     /* ------- Colors ------ */
         --offWhite:255, 255, 255, 0.5;
-        --accent: 197, 152, 255, 1;
+        --accent: 176, 114, 255;
         --white: 255, 255, 255, 1;
     
     /* ----- Font Size ---- */
-        --fs-600: clamp(2rem, 3vw , 2.5rem);
-        --fs-500: clamp(0.9rem, 1vw , 1.2rem);
-        --fs-400: clamp(0.8rem, 1vw , 1rem);
+        --fs-600: clamp(1.9rem, 3vw , 2.5rem);
+        --fs-500: clamp(1.4rem, 1vw , 1.9rem);
+        --fs-400: clamp(1.2rem, 1vw , 1.9rem);
+        --fs-300: clamp(1.2rem, 1vw , 1.5rem);
 }
 
 /* --------------------------------------------------------------- */
@@ -108,23 +110,71 @@ body {
 
 .fs-600{ 
     font-size: var(--fs-600);
-    font-weight: 700;
+    font-weight: 600;
 }
 .fs-500{ font-size: var(--fs-500) }
 .fs-400{ font-size: var(--fs-400) }
+.fs-300{ 
+    font-size: var(--fs-300);
+    font-weight: 400;
+}
+
 
 .fc-offWhite{ color: rgba( var(--offWhite) ) }
-.fc-accent{ color: rgba( var(--accent) ) }
+.fc-accent{ color: rgba( var(--accent)) }
 .fc-white{ color: rgba( var(--white) )}
 
-.box-container{
-    border: 1px solid #88BEEF;
-    margin-top: 10vh;
-    height: 80vh;
-    width: clamp(30rem, 35vw , 40rem);
-    border-radius: 25px;
-    margin-inline: auto;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.0276) 0%, rgba(0, 0, 0, 0.06) 0%, rgba(255, 255, 255, 0.06) 0%, rgba(135, 141, 177, 0.0297472) 51.48%, rgba(90, 98, 138, 0.06) 100%);
-    box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.inputFeild{
+    padding: 5% 10%;
+    margin: 0.4rem 0;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.87);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    transition-duration: 400ms;
+    color: white;
+}
+
+.inputFeild::placeholder{
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.69);
+}
+
+.inputFeild:focus{
+    outline: none;
+    border-color: rgba(var(--accent));
+    font-size: 1.5rem;
+}
+
+.checkbox{
+    width: 24px;
+    height: 25px;
+    margin-inline: 2px 15px;
+    display: block;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    margin: 1rem auto;
+    font-weight: 700;
+    font-size: var(--fs-500);
+    color: rgba(var(--white));
+    background-color: rgba( var(--accent) );
+    padding: 3% 8%;
+    border: none;
+    border-radius: 0.5rem;
+    transition-duration:300ms ;
+}
+
+.button:active{
+    background-color: rgba( var(--accent), 0.8 );
+    transform: scale(0.9);
 }
