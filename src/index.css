@@ -32,16 +32,14 @@ body {
     min-height: 150vh;
     font-family: 'Poppins', sans-serif;
 
-    width: 100%;
-    overflow-x:hidden;
-
+    width: 90%;
+    
+    margin-inline: auto ;
     background-position: center;
     background: rgb(148, 148, 148);
     background-image: url("./assets/background/mobile-backgroundImage.png");
     background-repeat: no-repeat;
     background-size: cover;
-
-    overflow: hidden;
 }
 
 /* make images easier to work with */
@@ -103,7 +101,7 @@ body {
         --fs-600: clamp(1.9rem, 3vw , 2.5rem);
         --fs-500: clamp(1.4rem, 1vw , 1.9rem);
         --fs-400: clamp(1.2rem, 1vw , 1.9rem);
-        --fs-300: clamp(1.2rem, 1vw , 1.5rem);
+        --fs-300: clamp(0.9rem, 1vw , 1.3rem);
 }
 
 /* --------------------------------------------------------------- */

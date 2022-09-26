@@ -24,11 +24,11 @@ export default function SignUp(){
                          alt='Checkbox'
                          className='checkbox'
                     />
-                    <p className='fs-400 fc-white'>I agree to Terms & Conditions</p>
+                    <p className='fs-300 fc-white'>I agree to Terms & Conditions</p>
                 </section>
                 
                 <button className='button'>Sign Up</button>
-                <p className='fs-400 fc-white' style={{"textAlign":"center"}}>Already have an account? <a href='/signin'>Sign in</a></p>
+                <p className='fs-300 fc-white' style={{"textAlign":"center"}}>Already have an account? <a href='/signin'>Sign in</a></p>
             </main>
         </BoxContainer>
     )
