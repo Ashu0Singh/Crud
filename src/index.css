@@ -29,11 +29,11 @@ ul {
 /* set up the body */
 body {
     line-height: 1.5;
-    min-height: 150vh;
+    min-height: 110vh;
     font-family: 'Poppins', sans-serif;
 
     width: 90%;
-    
+
     margin-inline: auto ;
     background-position: center;
     background: rgb(148, 148, 148);
