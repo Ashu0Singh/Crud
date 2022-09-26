@@ -55,6 +55,8 @@ input,
 button,
 textarea,
 select {
+    max-width: 100%;
+    display: block;
     font: inherit;
 }
 
@@ -131,7 +133,7 @@ body {
 }
 
 .inputFeild{
-    padding: 5% 10%;
+    padding: 4% 10%;
     margin: 0.4rem 0;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.87);
