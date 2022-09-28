@@ -178,3 +178,8 @@ body {
     background-color: rgba( var(--accent), 0.8 );
     transform: scale(0.9);
 }
+
+.error{
+    font-style:italic ;
+    color: rgba(243, 82, 82, 0.945);
+}
