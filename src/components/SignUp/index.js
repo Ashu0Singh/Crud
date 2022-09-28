@@ -3,6 +3,9 @@ import './index.css';
 import { useState } from 'react'
 import Checked from '../../assets/backImage/Checked.png'
 import Unchecked from '../../assets/backImage/Unchecked.png'
+import { Link } from 'react-router-dom'
+import { db } from '../Firebase/firebase';
+import { collection , addDoc } from '@firebase/firestore';
 
 export default function SignUp(){
     const [userDetails , setUserDetails] = useState({
@@ -53,8 +56,13 @@ export default function SignUp(){
             isError = true;
         }
         setError(errorVal);
-        !isError&&alert("Your response have been recorded");
-        
+        if(!isError){
+            const userCollectionRef = collection(db,'users')
+            const createUser = async () => {
+                await addDoc(userCollectionRef , userDetails);
+            }
+            createUser();
+        }
     }
     return(
         <BoxContainer>
@@ -119,7 +127,7 @@ export default function SignUp(){
                         disabled={!userDetails.isChecked}
                         style={userDetails.isChecked ? {'opacity': '1'} : { 'opacity' : '0.5'}}
                 >Sign Up</button>
-                <p className='fs-300 fc-white' style={{"textAlign":"center"}}>Already have an account? <a href='/signin'>Sign in</a></p>
+                <p className='fs-300 fc-white' style={{"textAlign":"center"}}>Already have an account? <Link to='/Crud/acc'>Sign in</Link></p>
             </main>
         </BoxContainer>
     )
