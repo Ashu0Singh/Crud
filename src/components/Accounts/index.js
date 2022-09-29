@@ -4,7 +4,11 @@ import { collection , getDocs } from '@firebase/firestore'
 import BoxContainer from '../BoxContainer';
 
 export default function Accounts() {
-    const [users , setUsers] = useState(["Ashu"]);
+    const [users , setUsers] = useState([
+        <div style={{textAlign : "center"}}>
+            <p className='fs-400 fc-offWhite'>Fetching User Data</p>
+        </div>
+    ]);
     
 
     useEffect(() => {

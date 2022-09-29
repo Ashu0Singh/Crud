@@ -171,7 +171,7 @@ body {
     padding: 3% 8%;
     border: none;
     border-radius: 0.5rem;
-    transition-duration:300ms ;
+    transition-duration:100ms ;
 }
 
 .button:active{

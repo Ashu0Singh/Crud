@@ -1,27 +1,45 @@
 import BoxContainer from '../BoxContainer';
 import './index.css';
-import { useState } from 'react'
+import {  useState } from 'react'
 import Checked from '../../assets/backImage/Checked.png'
 import Unchecked from '../../assets/backImage/Unchecked.png'
 import { Link } from 'react-router-dom'
 import { db } from '../Firebase/firebase';
-import { collection , addDoc } from '@firebase/firestore';
+import { collection ,getDocs, addDoc } from '@firebase/firestore';
 
 export default function SignUp(){
+    const userCollectionRef = collection(db,'users')
     const [userDetails , setUserDetails] = useState({
-                                            firstName : '',
-                                            lastName : '',
-                                            email : '',
-                                            password : '',
-                                            confPassword : '',
-                                            isChecked : false
-                                        });
+        firstName : '',
+        lastName : '',
+        email : '',
+        password : '',
+        confPassword : '',
+        isChecked : false
+    });
     const [error , setError] = useState({
-                                            fNameError:'',
-                                            emailError:'',
-                                            passwordError:'',
-                                            confPassError:''
-                            });
+                    fNameError:'',
+                    emailError:'',
+                    passwordError:'',
+                    confPassError:''
+    });
+
+    let userEmails = [];
+
+    const getUserDetails = async () => {
+        const data = await getDocs(userCollectionRef);
+        
+        const emails = data.docs.map((details) => {
+
+            const {email} = details.data();
+            return email;
+        })
+        userEmails =  emails;
+    }
+
+    getUserDetails();
+
+    
 
     function updateIsChecked({target: {name}}){
         setUserDetails(prevVal => ({...prevVal, [name]: !prevVal[name]}));
@@ -55,15 +73,24 @@ export default function SignUp(){
             errorVal.confPassError = `Password doesn't match`;
             isError = true;
         }
+        if(checkEmail(email,userEmails)){
+            errorVal.emailError = 'Email already exists';
+            isError = true;
+        }
         setError(errorVal);
+        
+
         if(!isError){
-            const userCollectionRef = collection(db,'users')
             const createUser = async () => {
                 await addDoc(userCollectionRef , userDetails);
             }
             createUser();
         }
     }
+
+    const checkEmail = (email , allUsers) => { return false||allUsers.filter(value => value === email) }
+
+
     return(
         <BoxContainer>
             <main className='signUp'>
