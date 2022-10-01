@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Crud/static/css/main.d79f7f48.css",
-    "main.js": "/Crud/static/js/main.e36b4fad.js",
+    "main.js": "/Crud/static/js/main.4f7da745.js",
     "static/media/mobile-backgroundImage.png": "/Crud/static/media/mobile-backgroundImage.a6908e3a2c5bba678d1c.png",
     "index.html": "/Crud/index.html",
     "main.d79f7f48.css.map": "/Crud/static/css/main.d79f7f48.css.map",
-    "main.e36b4fad.js.map": "/Crud/static/js/main.e36b4fad.js.map"
+    "main.4f7da745.js.map": "/Crud/static/js/main.4f7da745.js.map"
   },
   "entrypoints": [
     "static/css/main.d79f7f48.css",
-    "static/js/main.e36b4fad.js"
+    "static/js/main.4f7da745.js"
   ]
 }
