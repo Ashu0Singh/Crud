@@ -149,7 +149,7 @@ body {
 .inputFeild:focus{
     outline: none;
     border-color: rgba(var(--accent));
-    font-size: 1.5rem;
+    transform: scale(1.1);
 }
 
 .checkbox{

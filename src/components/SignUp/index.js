@@ -73,12 +73,13 @@ export default function SignUp(){
             errorVal.confPassError = `Password doesn't match`;
             isError = true;
         }
-        if(checkEmail(email,userEmails)){
+        const emailCheck = checkEmail(email,userEmails);
+        if(emailCheck){
             errorVal.emailError = 'Email already exists';
             isError = true;
         }
         setError(errorVal);
-        
+        console.log(emailCheck)
 
         if(!isError){
             const createUser = async () => {
@@ -88,7 +89,7 @@ export default function SignUp(){
         }
     }
 
-    const checkEmail = (email , allUsers) => { return false||allUsers.filter(value => value === email) }
+    const checkEmail = (email , allUsers) => Boolean(allUsers.find(value => value === email));
 
 
     return(
