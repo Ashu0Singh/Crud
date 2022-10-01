@@ -80,7 +80,6 @@ export default function SignUp(){
             isError = true;
         }
         setError(errorVal);
-        console.log(emailCheck)
 
         if(!isError){
             const createUser = async () => {

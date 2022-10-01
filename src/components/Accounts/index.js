@@ -15,7 +15,6 @@ export default function Accounts() {
         const userCollectionRef = collection(db , 'users');
         const getUserDetails = async () => {
             const data = await getDocs(userCollectionRef);
-            console.log(data.docs)
             const userDetails = data.docs.map(
                 details => {
                     const {firstName , lastName , email , password} = details.data();
