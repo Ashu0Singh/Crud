@@ -3,11 +3,12 @@ import './index.css';
 import {  useState } from 'react'
 import Checked from '../../assets/backImage/Checked.png'
 import Unchecked from '../../assets/backImage/Unchecked.png'
-import { Link } from 'react-router-dom'
+import { Link , useNavigate } from 'react-router-dom'
 import { db } from '../Firebase/firebase';
 import { collection ,getDocs, addDoc } from '@firebase/firestore';
 
 export default function SignUp(){
+    const navigate = useNavigate();
     const userCollectionRef = collection(db,'users')
     const [userDetails , setUserDetails] = useState({
         firstName : '',
@@ -87,6 +88,8 @@ export default function SignUp(){
             }
             createUser();
         }
+
+        navigate('/Crud/acc');
     }
 
     const checkEmail = (email , allUsers) => Boolean(allUsers.find(value => value === email));
